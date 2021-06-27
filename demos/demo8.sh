@@ -4,9 +4,9 @@ prefix=$1
 num=$2
 
 for i in $(seq $num);do
-  user=$prefix$num
+  user=$prefix$i
   useradd $user
-  if [ $? -nq 0 ];then
+  if [ $? -ne 0 ];then
     echo "create user $user error"
     break
   fi
